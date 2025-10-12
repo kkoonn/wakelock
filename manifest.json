@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Sleep Keeper (Wake Lock Toggle)",
+    "version": "1.0.0",
+    "description": "画面スリープを抑止する",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Sleep Keeper"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
+}
