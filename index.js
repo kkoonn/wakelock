@@ -1,3 +1,4 @@
+const statusText = document.querySelector("#wake-lock-status");
 let wakeLock = null;
 
 // スリープを防ぐ
@@ -10,6 +11,7 @@ async function requestWakeLock() {
         wakeLock.addEventListener("release", () => {
             console.log("Wake Lock が解除されました");
         });
+        statusText.textContent = "防止中";
     } catch (err) {
         console.error(`${err.name}, ${err.message}`);
     }
@@ -17,6 +19,7 @@ async function requestWakeLock() {
 
 // Wake Lock を解除
 function releaseWakeLock() {
+    statusText.textContent = "停止中";
     if (wakeLock !== null) {
         wakeLock.release();
         wakeLock = null;
