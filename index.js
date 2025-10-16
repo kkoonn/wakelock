@@ -9,6 +9,7 @@ async function requestWakeLock() {
 
         // 解除されたときのイベント
         wakeLock.addEventListener("release", () => {
+            statusText.textContent = "停止中";
             console.log("Wake Lock が解除されました");
         });
         statusText.textContent = "防止中";
